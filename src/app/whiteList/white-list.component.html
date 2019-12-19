@@ -1,0 +1,21 @@
+<div class="col-md-6">
+    <button (click)="logout()">Logout</button>
+</div>
+
+<form [formGroup]="myForm" #formCtrl="ngForm"
+(ngSubmit)="onSubmit()" novalidate>
+  <div formArrayName="itemRows" class="col-md-6">
+    <div class="row" *ngFor="let itemrow of myForm.controls.itemRows.controls; let i=index, let $last=last"
+    [formGroupName]="i">
+      <div class="col">
+        <input type="text" placeholder="IP Address" aria-label="IP Address" formControlName="ip">
+        <a class="btn" (click)="deleteRow(i)"><i class="fa fa-minus"></i></a>
+        <a class="btn"  (click)="addNewRow()" *ngIf="$last"><i class="fa fa-plus"></i></a>
+      </div>
+    </div>
+    <!-- end of row -->
+
+    <button [disabled]="!formCtrl.form.valid || !btnEnable" type="submit">Submit</button>
+  </div>
+
+</form>

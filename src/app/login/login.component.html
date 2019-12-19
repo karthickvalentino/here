@@ -1,0 +1,22 @@
+
+<div>
+  <div style="text-align:center">
+    <h1>
+      Welcome!
+    </h1>
+  </div>
+  <div class="row" style="text-align:center">
+    <div class="col-md-8">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="type">Example select</label>
+          <select class="form-control" id="type" [(ngModel)]="type" name="type">
+            <option value="1">Regular</option>
+            <option value="2">Premium</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
