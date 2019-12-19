@@ -72,4 +72,8 @@ export class WhiteListComponent implements OnInit {
     this.storage.setItem('ip', JSON.stringify(ips));
   }
 
+  getControls() {
+    return (this.myForm.get('itemRows') as FormArray).controls;
+  }
+
 }

@@ -5,7 +5,7 @@
 <form [formGroup]="myForm" #formCtrl="ngForm"
 (ngSubmit)="onSubmit()" novalidate>
   <div formArrayName="itemRows" class="col-md-6">
-    <div class="row" *ngFor="let itemrow of myForm.controls.itemRows.controls; let i=index, let $last=last"
+    <div class="row" *ngFor="let itemrow of getControls(); let i=index, let $last=last"
     [formGroupName]="i">
       <div class="col">
         <input type="text" placeholder="IP Address" aria-label="IP Address" formControlName="ip">
